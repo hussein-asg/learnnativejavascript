@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    <!-- Mål: Lär dig hur du dynamiskt kan skapa och manipulera listor i HTML med JavaScript.
-Uppgift: Skapa en lista med 5 objekt och gör så att användaren kan lägga till ett nytt objekt till listan genom att klicka på en knapp. -->
+</head>
+<body>
+<!-- här finns uppgifter där man kan träna på manipuleration  -->
 
-    <input id="newPerson" type="text" />
-    <button id="add">klicka här</button>
-    <ul id="firends">
-      <li>amir hight:180</li>
-      <li>mamad hight:180</li>
-      <li>omid hight:180</li>
-      <li>sharif hight:180</li>
-      <li>fida hight:180</li>
-    </ul>
+<!-- Skapa en knapp i HTML med en initial text, t.ex. "Klicka här".
+Använd JavaScript för att ändra texten på knappen när användaren klickar på den. -->
+ <body>
+    <button id="knapp" >Klicka här</button>
 
     <script>
-      let add = document.querySelector("#add");
-      add.addEventListener("click", addOneMore);
-      let firends = document.querySelector("#firends");
+let kanpp = document.querySelector('#knapp')
 
-      function addOneMore() {
-        let newPerson = document.querySelector("#newPerson").value;
-        const li = document.createElement("li");
-        li.textContent = newPerson;
-        firends.append(li);
-      }
-    </script>
-  </body>
+knapp.addEventListener('click', change)
+
+function change(){
+   return knapp.textContent="yavash"
+}
+
+    </script> 
+</body>
 </html>
