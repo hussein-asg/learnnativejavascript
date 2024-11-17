@@ -6,19 +6,33 @@
     <title>Document</title>
   </head>
   <body>
-    <button class="button">blue</button>
-    <button class="button">green</button>
-    <button class="button">red</button>
+    <!-- Mål: Lär dig att hantera och manipulera formulärdata.
+Uppgift: Skapa ett formulär där användaren kan skriva in sitt namn och e-post, och sedan visa detta på sidan efter att de skickat in formuläret. -->
+
+    <form id="" action="">
+      <label for=""> name </label>
+      <input type="text" id="namn" />
+      <label for="">efternamn</label>
+      <input type="text" name="" id="efterNamn" />
+      <label for="">E-post</label>
+      <input type="text" name="" id="ePost" />
+      <button id="submitData" type="button">submit</button>
+      <!--om typen är submit då formuläret skickas så fort man trycker på knappen och sidan uppdateras -->
+    </form>
 
     <script>
-      let buttons = document.querySelectorAll(".button"); //glöm inte All , för att du vill ta emot alla knappar och inte bara den första
-      buttons.forEach((button) => button.addEventListener("click", change));
-      let div = document.createElement("div");
+      let submitData = document
+        .querySelector("#submitData")
+        .addEventListener("click", sendData);
 
-      function change() {
-        div.style.height = "100px";
-        div.style.backgroundColor = this.textContent;
-        document.body.append(div); //glöm inte att append(div) funkar inte och du måste skriva hela
+      function sendData() {
+        let namn = document.querySelector("#namn").value;
+        let efterNamn = document.querySelector("#efterNamn").value;
+        let ePost = document.querySelector("#ePost").value; //om du skriver de senaste 3 rader utanför funktion så får du null på alla tre, föratt fram börja står inget i dem
+        let p = document.createElement("p");
+        p.textContent = `Ditt namn är ${namn} ${efterNamn} och din e-post är ${ePost}`;
+
+        document.body.append(p); // skriv inte bara body.append(p)
       }
     </script>
   </body>
