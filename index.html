@@ -6,33 +6,23 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- Mål: Lär dig att hantera och manipulera formulärdata.
-Uppgift: Skapa ett formulär där användaren kan skriva in sitt namn och e-post, och sedan visa detta på sidan efter att de skickat in formuläret. -->
+    <!-- Mål: Träna på att manipulera CSS-egenskaper med JavaScript.
+Uppgift: Skapa en knapp som ändrar bakgrundsfärgen på en div när den klickas. -->
 
-    <form id="" action="">
-      <label for=""> name </label>
-      <input type="text" id="namn" />
-      <label for="">efternamn</label>
-      <input type="text" name="" id="efterNamn" />
-      <label for="">E-post</label>
-      <input type="text" name="" id="ePost" />
-      <button id="submitData" type="button">submit</button>
-      <!--om typen är submit då formuläret skickas så fort man trycker på knappen och sidan uppdateras -->
-    </form>
+    <button id="forchangingColor">klicka här för ändra backgrund färg</button>
+    <div id="div" style="background-color: lightblue; height: 50px"></div>
 
     <script>
-      let submitData = document
-        .querySelector("#submitData")
-        .addEventListener("click", sendData);
-
-      function sendData() {
-        let namn = document.querySelector("#namn").value;
-        let efterNamn = document.querySelector("#efterNamn").value;
-        let ePost = document.querySelector("#ePost").value; //om du skriver de senaste 3 rader utanför funktion så får du null på alla tre, föratt fram börja står inget i dem
-        let p = document.createElement("p");
-        p.textContent = `Ditt namn är ${namn} ${efterNamn} och din e-post är ${ePost}`;
-
-        document.body.append(p); // skriv inte bara body.append(p)
+      let div = document.querySelector("#div");
+      let forchangingColor = document
+        .querySelector("#forchangingColor")
+        .addEventListener("click", changeColor);
+      function changeColor() {
+        if (div.style.backgroundColor == "lightblue") {
+          div.style.backgroundColor = "red";
+        } else {
+          div.style.backgroundColor = "lightblue";
+        }
       }
     </script>
   </body>
