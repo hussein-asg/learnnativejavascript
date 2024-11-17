@@ -1,105 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-<!-- Skapa en lista (tabell)där användaren kan lägga till uppgifter, markera dem som slutförda 
- (med en checkbox) och ta bort dem genom att klicka på en "Ta bort"-knapp. -->
- 
+  </head>
+  <body>
+    <button class="button">blue</button>
+    <button class="button">green</button>
+    <button class="button">red</button>
 
- <style>
-    table{
-        display:none;
-        width: 100%;
-        border: 2px solid black;
-            margin-top: 10px;
-        
-    }
-   
-       td {
-        height: 30px;        
-        border: 2px solid black;
+    <script>
+      let buttons = document.querySelectorAll(".button"); //glöm inte All , för att du vill ta emot alla knappar och inte bara den första
+      buttons.forEach((button) => button.addEventListener("click", change));
+      let div = document.createElement("div");
 
-    }
-  </style>
-<h1>To Do List</h1>
-<label for=""></label>
-
-<input type="text" id="uppgift">
-<input type="text" id="tid">
-
-<button type="button" id="addButton">lägg till uppgift</button>
-
- <div id="">
-   
-    <table id="table" ">
-
-    </table>
-</div>
-
-<script>
-let uppgift=document.querySelector('#uppgift')
-let tid= document.querySelector('#tid')
-uppgift.placeholder="vad vill du göra?"
-tid.placeholder="vilken tid"
-let addButton=document.querySelector('#addButton')
-addButton.addEventListener('click', adduppgift)
-
-
-function adduppgift(){
-    
-if(uppgift.value!== null&& uppgift.value!== ''){
-
-
-let table=document.querySelector('#table')
-table.style.display='table'
-
-if(tid.value===null || tid.value===""){
- tid.value="ingen tid angiven"
-}
-
-let tr= document.createElement('tr')
-   tr.innerHTML= `
-<td>${uppgift.value}</td>
-<td>klockan:${tid.value}</td>
-<td><input type="checkbox" id=""> </td>
-<td> <button type="button" class="tabort">ta bort</button></td>
-<td>publicerades idag ${new Date().getHours()}:${new Date().getMinutes()}</td>
-
-    `;
-
-    uppgift.value=''
-     tid.value=''
-
-table.append(tr)
-
- 
-let tabortKnapp=tr.querySelector('.tabort')
- tabortKnapp.addEventListener('click', ()=>tr.remove())
-  
- 
-}else{
-    console.log('funktion kördes inte eftersom du ange inget uppgift')
-}
-}
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
+      function change() {
+        div.style.height = "100px";
+        div.style.backgroundColor = this.textContent;
+        document.body.append(div); //glöm inte att append(div) funkar inte och du måste skriva hela
+      }
+    </script>
+  </body>
 </html>
