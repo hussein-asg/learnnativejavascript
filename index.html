@@ -6,23 +6,29 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- Mål: Träna på att manipulera CSS-egenskaper med JavaScript.
-Uppgift: Skapa en knapp som ändrar bakgrundsfärgen på en div när den klickas. -->
+    <!-- Mål: Lär dig hur du dynamiskt kan skapa och manipulera listor i HTML med JavaScript.
+Uppgift: Skapa en lista med 5 objekt och gör så att användaren kan lägga till ett nytt objekt till listan genom att klicka på en knapp. -->
 
-    <button id="forchangingColor">klicka här för ändra backgrund färg</button>
-    <div id="div" style="background-color: lightblue; height: 50px"></div>
+    <input id="newPerson" type="text" />
+    <button id="add">klicka här</button>
+    <ul id="firends">
+      <li>amir hight:180</li>
+      <li>mamad hight:180</li>
+      <li>omid hight:180</li>
+      <li>sharif hight:180</li>
+      <li>fida hight:180</li>
+    </ul>
 
     <script>
-      let div = document.querySelector("#div");
-      let forchangingColor = document
-        .querySelector("#forchangingColor")
-        .addEventListener("click", changeColor);
-      function changeColor() {
-        if (div.style.backgroundColor == "lightblue") {
-          div.style.backgroundColor = "red";
-        } else {
-          div.style.backgroundColor = "lightblue";
-        }
+      let add = document.querySelector("#add");
+      add.addEventListener("click", addOneMore);
+      let firends = document.querySelector("#firends");
+
+      function addOneMore() {
+        let newPerson = document.querySelector("#newPerson").value;
+        const li = document.createElement("li");
+        li.textContent = newPerson;
+        firends.append(li);
       }
     </script>
   </body>
