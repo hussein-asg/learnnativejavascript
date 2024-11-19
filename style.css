@@ -1,0 +1,87 @@
+body {
+  /* för att ta bort standard marinalen så ger jag värde 0 till både M och P */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#navbar {
+  background-color: rgb(255, 227, 71);
+  display: flex;
+  /* flex för att fixa till positionen på mina element som nav och div */
+
+  justify-content: space-between;
+  /* föratt skapa space mellan logo och nav */
+
+  align-items: center;
+  /* Centrerar innehållet vertikalt */
+
+  padding: 10px 30px;
+  /* top och bottom / left and right */
+
+  position: fixed;
+  /* föratt navbaren ska alltid stanna längst upp även när besökare scrollar ner    */
+
+  width: 100%;
+  /* det ska sträcka sig över hela skärmen */
+
+  z-index: 1000;
+  /* Ser till att navbaren ligger ovanpå andra element på sidan. */
+
+  box-sizing: border-box;
+  /* när jag hade inte det så menyn hämnade hela tiden utanför, det kanske problemt är när man har space-between och padding tillsamans  */
+
+  ul {
+    display: flex;
+    list-style: none;
+
+    a {
+      color: rgb(0, 0, 0);
+      margin: 15px;
+      text-decoration: none;
+      list-style: none;
+    }
+  }
+}
+
+.logo {
+  a {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    /* det brukas vara ién understräck där lägga jag till none decoration här */
+  }
+}
+
+footer {
+  background-color: rgb(255, 227, 71);
+  width: 100%;
+  bottom: 0;
+  /* gör att footer ligger längs ner */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /*  */
+
+  #footer-content {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Centrerar innehållet vertikalt */
+  }
+
+  ul {
+    list-style: none;
+  }
+  a {
+    display: flex;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  #footer-bottom {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+}
